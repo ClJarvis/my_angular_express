@@ -1,0 +1,29 @@
+body {
+  background-color: rgba(32, 32, 152, .9);
+  color: #6C9E9E;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.form-control, input.form-controll {
+  background-color: rgba(153, 255, 255, 0.35);
+  color: #2B6A6A;
+  border-color: rgba(153, 255, 255, 0.9);
+  margin-bottom: 0.4em;
+}
+
+.btn-default {
+  background-color: rgba(32, 32, 152, .1);
+  color: #6C9E9E;
+}
+
+a:hover {
+  color: white;
+}
+
+/*body {
+  background-image: url("images/cannon_and_chess.jpg'");
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+

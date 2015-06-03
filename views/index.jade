@@ -1,0 +1,25 @@
+extends layout
+
+block body
+  div(ng-controller='AppCtrl')
+    h2 Hello {{name}}
+    ul.menu
+      li
+        a(href='login') login
+      li
+        a(href='logout') logout
+        li
+          a(href='todo') Your Todo list
+
+    div(ng-view)
+
+    div
+      span(app-version)
+
+    table.table
+      tr
+        td Task
+        td Description
+        td Due Date
+        td Priority
+        td Completed
