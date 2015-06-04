@@ -1,14 +1,16 @@
 body {
-  background-color: rgba(32, 32, 152, .9);
-  color: #6C9E9E;
+  background-color: black;
+  color: white;
   padding-left: 1em;
   padding-right: 1em;
 }
 
 .form-control, input.form-controll {
   background-color: rgba(255, 255, 255, 0.35);
-  color: #2B6A6A;
-  border-color: rgba(153, 255, 255, 0.9);
+  color: black;
+  border-color: #3A0A0a;
+  border-width: 4px;
+  border-style: groove;
   margin-bottom: 0.4em;
 }
 

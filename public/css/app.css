@@ -1,5 +1,13 @@
 /* app css stylesheet */
 
+body {
+  background-image: url('../images/cannon_and_chess.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid white;
