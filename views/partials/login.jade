@@ -1,11 +1,11 @@
-div.col-md-4.col-md-offset-4
-  h3 Login to your account
+div.col-md-5.col-md-offset-3
+  h3 Please Login to your account here
 
-  form
+  form(name='regForm', novalidate)
     div.form-group
       label Username
-      input.form-controll(type='text', name ='username ')
+      input.form-controll#username(type='text', name='username',ng-model='user.username', autofocus, required, ng-minlength='3')
     div.form-group
       label password
-      input.form-controll(type='password', name='password ')
-    input.btn.btn-default(type='submit', value='login')
+      input.form-controll#password(type='password', name='password',ng-model='user.password', autofocus, required, ng-minlenght='3')
+    button.btn.btn-default( ng-show='regForm.$valid', ng-click='login()') Login

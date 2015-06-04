@@ -12,7 +12,7 @@ body {
   margin-bottom: 0.4em;
 }
 
-.btn-default {
+button.btn.btn-default{
   background-color: rgba(32, 32, 152, .1);
   color: #6C9E9E;
 }

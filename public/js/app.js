@@ -12,11 +12,11 @@ config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/login', {
       templateUrl: 'partials/login',
-      controller: 'MyCtrl1'
+      controller: 'AuthCtrl'
     }).
     when('/logout', {
       templateUrl: 'partials/logout',
-      controller: 'MyCtrl2'
+      controller: 'NavCtrl'
     }).
     when('/todo', {
       templateUrl: 'partials/todo',
@@ -24,7 +24,8 @@ config(function ($routeProvider, $locationProvider) {
     }).
     when('/register', {
       templateUrl: 'partials/register',
-      controller: 'RegisterCtrl'
+      controller: 'AuthCtrl'
+
     }).
     otherwise({
       redirectTo: '/register'
