@@ -51,3 +51,23 @@ $scope.login = function(){
 
 
 })
+
+$scope.Todo = function(){
+    console.log('you clicked the register button')
+    $http({
+          method: 'POST',
+          url: '/api/user/login',
+          data: $scope.user
+        }).
+        success(function (data, status, headers, config) {
+          console.log('you logged in!', data);
+          $rootScope.rootuser = data.username;
+          $location.path('/todo');
+        }).
+        error(function (data, status, headers, config) {
+          console.log('login failed')
+        });
+  }
+
+
+})
