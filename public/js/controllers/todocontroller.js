@@ -1,17 +1,17 @@
 controllers.controller('TodoCtrl', function ($scope, $http, $location) {
   $scope.message = 'Todo';
-  $scope.Todo = {};
+  $scope.todo = {};
 
-  $scope.Todo = function(){
+  $scope.todo = function(){
     console.log('you clicked the create a form button')
     $http({
           method: 'POST',
           url: '/api/tasks',
-          data: $scope.Todo
+          data: $scope.todo
         }).
         success(function (data, status, headers, config) {
           console.log('you added a task!', data);
-          $scope.Todo = data.task;
+          $scope.todo = data.task;
           $location.path('/todolist');
         }).
         error(function (data, status, headers, config) {
