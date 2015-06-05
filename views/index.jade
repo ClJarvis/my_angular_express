@@ -1,6 +1,7 @@
 extends layout
 
 block body
+  include partials/nav
   div(ng-controller='AppCtrl')
 
     h2 Hello {{name}}
