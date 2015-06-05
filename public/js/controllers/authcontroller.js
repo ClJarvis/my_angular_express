@@ -3,7 +3,7 @@ controllers.controller('AuthCtrl', function ($scope, $http, $rootScope, $locatio
   $scope.showRegister = true;
   $scope.showLogin = false;
   $scope.user= {};
-  $scope.task= {};
+  $scope.todo= {};
 
   $scope.showLoginBtn = function(){
     $scope.showRegister = false;
@@ -27,6 +27,7 @@ controllers.controller('AuthCtrl', function ($scope, $http, $rootScope, $locatio
           $scope.user={};
           $scope.showRegister = false;
           $scope.showLogin = true;
+          $location.path('/login');
         }).
         error(function (data, status, headers, config) {
           console.log('register failed')
@@ -49,26 +50,24 @@ $scope.login = function(){
           console.log('login failed')
         });
   }
+console.log("scope.todo")
 
-
-
-
-$scope.Todo = function(){
-    console.log('you clicked the create a form button')
-    $http({
-          method: 'POST',
-          url: '/api/user/todo',
-          data: $scope.task
-        }).
-        success(function (data, status, headers, config) {
-          console.log('you added a task!', data);
-          $Scope.task = data.task;
-          $location.path('/todo');
-        }).
-        error(function (data, status, headers, config) {
-          console.log('adding task failed')
-        });
-  }
+// $scope.todo = function(){
+//     console.log('you clicked the create a form button')
+//     $http({
+//           method: 'POST',
+//           url: '/api/tasks',
+//           data: $scope.todo
+//         }).
+//         success(function (data, status, headers, config) {
+//           console.log('you added a task!', data);
+//           $scope.todo = data.task;
+//           $location.path('/logout');
+//         }).
+//         error(function (data, status, headers, config) {
+//           console.log('adding task failed')
+//         });
+//   }
 
 
 });

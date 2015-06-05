@@ -1,24 +1,25 @@
 div.col-md-4.col-md-offset-4
   h3 Create Your Todo List
-  form(name='todoForm', novalidate)
+  form(name='todoForm', method='POST', novalidate)
     input(type='hidden', name='db_id')
     div.form-group
-      label Task
-      input.form-control(type='text', name='task')
+      label Title
+      input.form-control(type='text', name='title', ng-model= 'todo.title')
     div.form-group
       label Description
-      textarea.form-control(rows='2', name='description')
+      textarea.form-control(rows='2', name='description', ng-model= 'todo.description')
     div.form-group
       label Due Date
-      input.form-control(type='date', name='dueDate')
+      input.form-control(type='date', name='due_date', ng-model= 'todo.dueDate')
     div.form-group
       label Priority
-      input.form-control(type="text", name="priority")
+      input.form-control(type="number", name="priority", ng-model= 'todo.priority' autofocus, required, min="0" max="10")
     div.checkbox
       label
-        input(type='checkbox', name='completed')
+        input(type='checkbox', name='completed', ng-model= 'todo.completed')
         | Completed
-    button.btn.btn-default( ng-click='Todo()') Submit
+
+    button.btn.btn-default(ng-show='todoForm.$valid', ng-click='Todo()') Submit
 
 
 
