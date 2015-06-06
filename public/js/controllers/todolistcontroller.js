@@ -1,25 +1,20 @@
 controllers.controller('TodolistCtrl', function ($scope, $http, $rootScope, $location) {
     $scope.message= 'TodoList page';
-    $scope.todolist= {};
-    $scope.task = {};
+    // $scope.todolist= {};
+    $scope.task = [];
 
-
-  $scope.todolist = function(){
-    console.log('TodolistCtrl is here')
     $http({
         method: 'GET',
-        url: '/api/tasks',
-        data: $scope.task
+        url: '/api/tasks'
       }).
       success(function (data, status, headers, config) {
-        console.log('Congratulations you have more stuff to do!', $scope.task);
-        $scope.todolist = data.tasks;
-        $location.path('/todolist');
+        console.log('Task Rendered!', $scope.task);
+        // $scope.todolist = data.tasks;
+        return $scope.task = data;
       }).
       error(function (data, status, headers, config) {
-        console.log("nothing to do? check again you ain't getting off that easy")
+        console.log("failed to render task")
       });
-  }
 
 });
 
