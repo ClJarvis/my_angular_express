@@ -3,7 +3,7 @@ controllers.controller('AuthCtrl', function ($scope, $http, $rootScope, $locatio
   $scope.showRegister = true;
   $scope.showLogin = false;
   $scope.user= {};
-  $scope.Todo= {};
+  $scope.todo= {};
 
   $scope.showLoginBtn = function(){
     $scope.showRegister = false;
@@ -50,7 +50,7 @@ $scope.login = function(){
           console.log('login failed')
         });
   }
-console.log("scope.todo")
+
 
 
 
