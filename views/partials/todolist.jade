@@ -9,6 +9,6 @@ a(href='/todo') Create a new task
   .priority Priority:{{task.priority}}
   .dueDate Due Date: {{task.due_date}}
   .actions
-    a.deleteButtton(ng-click='remove(item)') Delete
+    a.deleteButtton(ng-click='delete(task._id)') Delete
     a.editButton Edit
 
