@@ -4,20 +4,21 @@ div.col-md-4.col-md-offset-4
 
     div.form-group
       label Title
-      input.form-control(type='text', name='title', ng-model='title')
+      input.form-control#todoTitle(type='text', name='title', ng-model= 'task.title')
     div.form-group
       label Description
-      textarea.form-control(rows='2', name='description', ng-model='description')
+      textarea.form-control#todoDescription(rows='2', name='description', ng-model= 'task.description')
     div.form-group
       label Due Date
-      input.form-control(type='date', name='due_date', ng-model='due_date')
+      input.form-control#todoDuedate(type='date', name='due_date', ng-model= 'task.due_date')
     div.form-group
       label Priority
-      input.form-control(type="number", name="priority", ng-model='priority' autofocus, required, min="0" max="100")
+      input.form-control#todoPriority(type="number", name="priority", ng-model= 'task.priority' autofocus, required, min="0" max="100")
     div.checkbox
       label
-        input(type='checkbox', name='complete', ng-model='complete')
+        input(type='checkbox', name='complete', ng-model= 'todo.complete')
         | Completed
+
 
     button.btn.btn-default(ng-show='todoForm.$valid', ng-click='todo()') Submit
 
