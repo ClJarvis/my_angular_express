@@ -9,7 +9,7 @@ var getTask = function() {
         url: '/api/tasks'
       }).
       success(function (data, status, headers, config) {
-        console.log('Task Rendered!', $scope.task)
+        console.log('Task Rendered!')
         // $scope.todolist = data.tasks;
         return $scope.task = data;
       }).
@@ -36,5 +36,29 @@ var getTask = function() {
   };
 
 
+  // var editTask = function(taskId) {
+  //   console.log("lets edit this item")
+  //   // $scope.task.user = $rootScope.rootUser;
+  //   $http({
+  //     method: 'GET',
+  //     url: '/api/tasks' + taskId,
+  //     data: $scope.tasklist,
+  //   }).
+  //   success(function(data, status, headers, config) {
+  //     console.log("editing worked")
+  //     getTask();
+  //   }).
+  //   $http({
+  //     method: 'DELETE',
+  //     url: 'api/tasks/' + taskId,
+  //     data: $scope.tasklist,
+  //   })
+  // };
+controllers.contoller('EditCtrl', function($scope, $rootScope, $http, myService) {
+  $scope.message= "edit a task";
+  console.log("in edit ctrl");
+
+  $scope.task = taskService.editTask;
+})
 });
 

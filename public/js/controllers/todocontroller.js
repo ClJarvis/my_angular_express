@@ -1,4 +1,4 @@
-controllers.controller('TodoCtrl', function ($scope, $http, $rootScope, $location) {
+controllers.controller('TodoCtrl', function ($scope, $http, $rootScope, $location, myService) {
   $scope.message = 'Todo';
   $scope.task = {};
 
@@ -16,7 +16,7 @@ controllers.controller('TodoCtrl', function ($scope, $http, $rootScope, $locatio
       $location.path('/todolist');
     }).
     error(function (data, status, headers, config) {
-      console.log("nothing to do? check again you ain't getting off that easy")
+      console.log("nothing to do? Try again you ain't getting off that easy")
     });
 
   }
