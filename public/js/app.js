@@ -25,6 +25,10 @@ config(function ($routeProvider, $locationProvider) {
     when('/register', {
       templateUrl: 'partials/register',
       controller: 'AuthCtrl'
+   }).
+    when('/todolist', {
+      templateUrl: 'partials/todolist',
+      controller: 'TodolistCtrl'
 
     }).
     otherwise({
