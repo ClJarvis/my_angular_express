@@ -1,4 +1,5 @@
-controllers.controller('TodoCtrl', function ($scope, $http, $rootScope, $location, myService) {
+controllers.controller('TodoCtrl', function ($scope, $http, $rootScope, $location) {
+  //myService
   $scope.message = 'Todo';
   $scope.task = {};
 

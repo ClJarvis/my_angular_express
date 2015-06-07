@@ -1,4 +1,4 @@
-controllers.controller('TodolistCtrl', function ($scope, $http, $rootScope, $location) {
+controllers.controller('TodolistCtrl', function ($scope, $http, $rootScope, $location, taskService) {
     $scope.message= 'TodoList page';
     // $scope.tasklist= {};
     // $scope.task = [];
@@ -9,7 +9,7 @@ var getTask = function() {
         url: '/api/tasks'
       }).
       success(function (data, status, headers, config) {
-        console.log('Task Rendered!')
+        console.log('Task Rendered!', $scope.task)
         // $scope.todolist = data.tasks;
         return $scope.task = data;
       }).
@@ -19,11 +19,11 @@ var getTask = function() {
  };
   getTask();
 
-  $scope.delete = function(taskId) {
+  $scope.delete = function(id) {
     console.log("delete attempt")
     $http({
       method: 'DELETE',
-      url: 'api/tasks/' + taskId,
+      url: 'api/tasks/' + id,
       data: $scope.tasklist,
     }).
     success(function(data, status, headers, config) {
@@ -35,30 +35,22 @@ var getTask = function() {
     })
   };
 
+  $scope.edit = function(taskId) {
 
-  // var editTask = function(taskId) {
-  //   console.log("lets edit this item")
-  //   // $scope.task.user = $rootScope.rootUser;
-  //   $http({
-  //     method: 'GET',
-  //     url: '/api/tasks' + taskId,
-  //     data: $scope.tasklist,
-  //   }).
-  //   success(function(data, status, headers, config) {
-  //     console.log("editing worked")
-  //     getTask();
-  //   }).
-  //   $http({
-  //     method: 'DELETE',
-  //     url: 'api/tasks/' + taskId,
-  //     data: $scope.tasklist,
-  //   })
-  // };
-controllers.contoller('EditCtrl', function($scope, $rootScope, $http, myService) {
-  $scope.message= "edit a task";
-  console.log("in edit ctrl");
+        $http({
+              method: 'GET',
+              url: '/api/tasks/' + taskId
+            }).
+            success(function (data, status, headers, config) {
+              console.log('inside listController');
+              // console.log(data[0]);
+              taskService.setTask(data[0]);
+              console.log("made it past services")
+              $location.path('/edit');
+            }).
+            error(function (data, status, headers, config) {
+              console.log('could not get the tasks');
+            });
+      }
 
-  $scope.task = taskService.editTask;
-})
 });
-
