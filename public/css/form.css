@@ -1,3 +1,5 @@
+/*////CSS FOR FORM PAGE WITHOUT AND BACKGROUND IMAGE /////////*/
+
 body {
   background-color: rgba(32, 32, 152, .9);
   color: #6C9E9E;
@@ -5,7 +7,7 @@ body {
   padding-right: 1em;
 }
 
-.form-control, input.form-controll {
+.form-control, input.form-control {
   background-color: rgba(255, 255, 255, 0.35);
   color: #2B6A6A;
   border-color: rgba(153, 255, 255, 0.9);

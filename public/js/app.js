@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives'
+
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
@@ -29,6 +30,15 @@ config(function ($routeProvider, $locationProvider) {
     when('/todolist', {
       templateUrl: 'partials/todolist',
       controller: 'TodolistCtrl'
+    }).
+    when('/table', {
+      templateUrl: 'partials/table',
+      controller: 'TableCtrl'
+
+    }).
+    when('/edit', {
+      templateUrl: 'partials/edit',
+      controller: 'EditCtrl'
 
     }).
     otherwise({
@@ -36,6 +46,8 @@ config(function ($routeProvider, $locationProvider) {
     });
 
   $locationProvider.html5Mode(true);
+
+
 
   console.log($('.menu'));
 });

@@ -4,24 +4,19 @@ block body
   //include partials/nav
   div(ng-controller='AppCtrl')
 
-    h2 Hello {{name}}
+    h2 Hello {{name}} {{prop}}
     ul.menu
       li
         a(href='login') login
       li
         a(href='logout') logout
         li
-          a(href='todo') Your Todo list
+          a(href='todolist') Your Todo list
 
     div(ng-view)
 
     div
       span(app-version)
 
-    table.table
-      tr
-        td Task
-        td Description
-        td Due Date
-        td Priority
-        td Completed
+
+   include partials/table

@@ -1,4 +1,4 @@
-controllers.controller('TodolistCtrl', function ($scope, $http, $rootScope, $location) {
+controllers.controller('TodolistCtrl', function ($scope, $http, $rootScope, $location, taskService) {
     $scope.message= 'TodoList page';
     // $scope.tasklist= {};
     // $scope.task = [];
@@ -19,11 +19,11 @@ var getTask = function() {
  };
   getTask();
 
-  $scope.delete = function(taskId) {
+  $scope.delete = function(id) {
     console.log("delete attempt")
     $http({
       method: 'DELETE',
-      url: 'api/tasks/' + taskId,
+      url: 'api/tasks/' + id,
       data: $scope.tasklist,
     }).
     success(function(data, status, headers, config) {
@@ -35,6 +35,22 @@ var getTask = function() {
     })
   };
 
+  $scope.edit = function(taskId) {
+
+        $http({
+              method: 'GET',
+              url: '/api/tasks/' + taskId
+            }).
+            success(function (data, status, headers, config) {
+              console.log('inside listController');
+              // console.log(data[0]);
+              taskService.setTask(data[0]);
+              console.log("made it past services")
+              $location.path('/edit');
+            }).
+            error(function (data, status, headers, config) {
+              console.log('could not get the tasks');
+            });
+      }
 
 });
-

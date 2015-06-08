@@ -1,14 +1,15 @@
 div.col-md-4.col-md-offset-4
+
   h3 Here's your list
 
-a(href='/todo') Create a new task
+  a(href='/todo') Create a new task
 
-.list(ng-repeat= 'task in task')
-  .title Title: {{task.title}}
-  .description Description:{{task.description}}
-  .priority Priority:{{task.priority}}
-  .dueDate Due Date: {{task.due_date}}
-  .actions
-    a.deleteButtton(ng-click='delete(task._id)') Delete
-    a.editButton Edit
+  .list(ng-repeat= 'task in task')
+    .title Title: {{task.title}}
+    .description Description:{{task.description}}
+    .priority Priority:{{task.priority}}
+    .dueDate Due Date: {{task.due_date}}
+    .actions
+      button.btn.btn-default.deleteButtton(ng-click='delete(task._id)') Delete
+      button.btn.btn-default.editButton(ng-click='edit(task._id)') Edit
 

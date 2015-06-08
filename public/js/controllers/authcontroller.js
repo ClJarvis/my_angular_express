@@ -4,6 +4,9 @@ controllers.controller('AuthCtrl', function ($scope, $http, $rootScope, $locatio
   $scope.showLogin = false;
   $scope.user= {};
   $scope.todo= {};
+  // $scope.name='username';
+
+
 
   $scope.showLoginBtn = function(){
     $scope.showRegister = false;
