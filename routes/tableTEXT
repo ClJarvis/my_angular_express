@@ -1,0 +1,32 @@
+ table
+    thead
+      tr
+        th.col-md-2
+          Title:
+        th.col-md-3
+          Description:
+        th.col-md-1
+          Priority:
+        th.col-md-2
+          Due Date:
+        th.col-md-2
+
+
+
+    tbody
+      tr(ng-repeat= 'task in task')
+
+        td.col-md-2
+          p {{task.title}}
+
+        td.col-md-3
+          P {{task.description}}
+        td.col-md-1
+          P {{task.priority}}
+        td.col-md-2
+          p {{task.due_date}}
+        td.col-md-2
+          button.btn.btn-default.deleteButtton(ng-click='delete(task._id)') Delete
+          button.btn.btn-default.editButton(ng-click='edit(task._id)') Edit
+
+    .col-md-1

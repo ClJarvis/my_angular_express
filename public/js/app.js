@@ -31,6 +31,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/todolist',
       controller: 'TodolistCtrl'
     }).
+    when('/todoTable', {
+      templateUrl: 'partials/todoTable',
+      controller: 'TodolistCtrl'
+    }).
     when('/table', {
       templateUrl: 'partials/table',
       controller: 'TableCtrl'

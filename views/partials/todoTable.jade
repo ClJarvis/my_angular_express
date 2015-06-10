@@ -1,0 +1,25 @@
+div.container-fluid
+
+
+  h3 Here's your table list
+
+  a(href='/todo') Create a new task
+
+  table
+    thead
+      tr
+        th.col-md-2 Title
+        th.col-md-3 Descripition
+        th.col-md-1 Priority
+        th.col-md-2 Due Date
+        th.col-md-2 Button
+    tbody
+      tr(ng-repeat= 'task in task')
+
+        td.col-md-2 {{task.title}}
+        td.col-md-3 {{task.description}}
+        td.col-md-2 {{task.priority}}
+        td.col-md-2 {{task.due_date}}
+        td.col-md-2
+          button.btn.btn-default.btn.sm.deleteButtton(ng-click='delete(task._id)') Delete
+          button.btn.btn-default.editButton(ng-click='edit(task._id)') Edit

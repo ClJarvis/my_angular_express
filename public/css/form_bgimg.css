@@ -34,3 +34,25 @@ button.btn.btn-default{
 a:hover {
   color: white;
 }
+
+
+table{
+  background-color: rgb(255, 255, 255, 0.15);
+  /*color: rgb(161, 121, 67);*/
+}
+
+table thead {
+  background-color: rgb(101, 52, 52);
+}
+tr:nth-child(odd) {
+  background-color: rgba(161, 121, 67, 0.25);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(61, 15, 15, 0.25);
+
+}
+
+
+
