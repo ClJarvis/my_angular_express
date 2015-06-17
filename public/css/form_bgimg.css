@@ -21,7 +21,7 @@ a {
 }
 
 .form-control:focus, .form-control:active {
-  border-color: rgb(161, 121, 67);
+  border-color: rgb(101, 52, 52);
   box-shadow: none;
 }
 
@@ -39,6 +39,8 @@ a:hover {
 table{
   background-color: rgb(255, 255, 255, 0.15);
   /*color: rgb(161, 121, 67);*/
+  border-style: inset;
+  border-color: rgb(61, 15, 15);
 }
 
 table thead {
