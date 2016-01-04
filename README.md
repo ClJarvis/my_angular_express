@@ -1,2 +1,4 @@
 # angular-express
-Basic Angular+Express application for task management
+##Todo List
+Basic Angular+Express CRUD application for task management.
+-AngularJS, Express, Jade, CSS, bower

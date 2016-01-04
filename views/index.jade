@@ -3,8 +3,9 @@ extends layout
 block body
   //include partials/nav
   div(ng-controller='AppCtrl')
+   div(ng-app="APPCtrl")
 
-    h2 Hello {{name}} {{prop}}
+    h2 Hello {{name}}
     ul.menu
       li
         a(href='login') login
@@ -16,7 +17,7 @@ block body
     div(ng-view)
 
     div
-      span(app-version)
+      //span(app-version)
 
 
-   include partials/table
+   //include partials/table
